@@ -1,0 +1,7 @@
+C:\Git\Jinrou1solution\Jinrou1\bin\Debug\Jinrou1.exe.config
+C:\Git\Jinrou1solution\Jinrou1\bin\Debug\Jinrou1.exe
+C:\Git\Jinrou1solution\Jinrou1\bin\Debug\Jinrou1.pdb
+C:\Git\Jinrou1solution\Jinrou1\obj\Debug\Jinrou1.csprojAssemblyReference.cache
+C:\Git\Jinrou1solution\Jinrou1\obj\Debug\Jinrou1.csproj.CoreCompileInputs.cache
+C:\Git\Jinrou1solution\Jinrou1\obj\Debug\Jinrou1.exe
+C:\Git\Jinrou1solution\Jinrou1\obj\Debug\Jinrou1.pdb
