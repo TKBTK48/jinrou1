@@ -15,6 +15,12 @@ namespace Jinrou1
             Console.WriteLine("準備できればEnterを押してください");
             Console.WriteLine();
             Console.ReadLine();
+            Console.WriteLine("役割分担");
+            Console.WriteLine("５⇒人狼１　狂人１　予言１　騎士１　市民１");
+            Console.WriteLine("６⇒人狼１　狂人１　予言１　騎士１　市民２");
+            Console.WriteLine("７⇒人狼１　狂人１　予言１　騎士１　市民３");
+            Console.WriteLine("８⇒人狼２　狂人０　予言１　霊媒１　騎士１　市民３");
+            
             //全体人数
             int playernum1 = 0;
             while (true)
