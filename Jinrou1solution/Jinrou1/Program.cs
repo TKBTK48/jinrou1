@@ -20,7 +20,10 @@ namespace Jinrou1
             Console.WriteLine("６⇒人狼１　狂人１　予言１　騎士１　市民２");
             Console.WriteLine("７⇒人狼１　狂人１　予言１　騎士１　市民３");
             Console.WriteLine("８⇒人狼２　狂人０　予言１　霊媒１　騎士１　市民３");
-            
+            Console.WriteLine("準備できればEnterを押してください");
+            Console.WriteLine();
+            Console.ReadLine();
+
             //全体人数
             int playernum1 = 0;
             while (true)
@@ -101,54 +104,6 @@ namespace Jinrou1
                 }
             }
 
-            //プレイヤーが予言者だった場合の人狼の確認
-            Console.WriteLine("予言者に占いをしてもらいます");
-            Console.WriteLine("準備できればEnterを押してください");
-            Console.WriteLine();
-            Console.ReadLine();
-            for (int i2 = 0; i2 < playernum2; i2++)
-            {
-                if (rolearray[i2] == "予言")
-                {
-                    Console.WriteLine($"あなた（プレイヤー{i2 + 1}）に予言を与えます。");
-                    Console.WriteLine("準備できればEnterを押してください");
-                    Console.WriteLine();
-                    Console.ReadLine();
-                    while (true)
-                    {
-                        Console.WriteLine($"あなた（プレイヤー{i2 + 1}）は占いたいプレイヤーの番号を半角数字で入力してください");
-                        string uranaiint = Console.ReadLine();
-
-                        try
-                        {
-                            int uranainum = int.Parse(uranaiint) - 1;
-                            Console.WriteLine($"プレイヤー({uranainum + 1})を占います");
-                            Console.WriteLine("準備できればEnterを押してください");
-                            Console.WriteLine();
-                            Console.ReadLine();
-                            if (rolearray[uranainum] == "人狼")
-                            {
-                                Console.WriteLine($"プレイヤー({uranainum + 1})は人狼です");
-                            }
-                            else
-                            {
-                                Console.WriteLine($"プレイヤー({uranainum + 1})は市民です");
-                            }
-                            break;
-                        }
-                        catch
-                        {
-                            Console.WriteLine("値が不正です");
-                        }
-                    }
-
-                }
-            }
-            Console.WriteLine("予言者は確認しました");
-            Console.WriteLine("準備できればEnterを押してください");
-            Console.WriteLine();
-            Console.ReadLine();
-
 
             //プレイヤー役割表明
             Console.WriteLine("各プレイヤーは自らの役割を表明してください");
@@ -206,6 +161,53 @@ namespace Jinrou1
             {
                 Console.WriteLine("昼になりました");
                 Console.WriteLine("確認できればEnterを押してください");
+                Console.ReadLine();
+                //プレイヤーが予言者だった場合の人狼の確認
+                Console.WriteLine("予言者に占いをしてもらいます");
+                Console.WriteLine("準備できればEnterを押してください");
+                Console.WriteLine();
+                Console.ReadLine();
+                for (int i2 = 0; i2 < playernum2; i2++)
+                {
+                    if (rolearray[i2] == "予言" && life[i2] == "生存")
+                    {
+                        Console.WriteLine($"あなた（プレイヤー{i2 + 1}）に予言を与えます。");
+                        Console.WriteLine("準備できればEnterを押してください");
+                        Console.WriteLine();
+                        Console.ReadLine();
+                        while (true)
+                        {
+                            Console.WriteLine($"あなた（プレイヤー{i2 + 1}）は占いたいプレイヤーの番号を半角数字で入力してください");
+                            string uranaiint = Console.ReadLine();
+
+                            try
+                            {
+                                int uranainum = int.Parse(uranaiint) - 1;
+                                Console.WriteLine($"プレイヤー({uranainum + 1})を占います");
+                                Console.WriteLine("準備できればEnterを押してください");
+                                Console.WriteLine();
+                                Console.ReadLine();
+                                if (rolearray[uranainum] == "人狼")
+                                {
+                                    Console.WriteLine($"プレイヤー({uranainum + 1})は人狼です");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"プレイヤー({uranainum + 1})は市民です");
+                                }
+                                break;
+                            }
+                            catch
+                            {
+                                Console.WriteLine("値が不正です");
+                            }
+                        }
+
+                    }
+                }
+                Console.WriteLine("予言者は確認しました");
+                Console.WriteLine("準備できればEnterを押してください");
+                Console.WriteLine();
                 Console.ReadLine();
                 Console.WriteLine("予言者と名乗り出た人は占いの内容を教えてください");
                 Console.WriteLine("確認できればEnterを押してください");
@@ -642,7 +644,7 @@ namespace Jinrou1
                     Console.WriteLine("人狼陣営（人狼、狂人）の勝利です");
                     for (int i18 = 0; i18 < playernum1; i18++)
                     {
-                        Console.WriteLine($"プレイヤー({i18+1})は{rolearray[i18]}でした");
+                        Console.WriteLine($"プレイヤー({i18 + 1})は{rolearray[i18]}でした");
                     }
                     break;
                 }
